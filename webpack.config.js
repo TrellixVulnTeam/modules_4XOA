@@ -6,7 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "[name].[contenthash].js",
@@ -44,7 +44,7 @@ module.exports = {
     new HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin,
     new ModuleFederationPlugin({
-      name: 'app1',
+      name: 'app2',
       library: { type: "var", name: "VideoPlugin"},
       filename: "remoteEntry.js",
       exposes: {
